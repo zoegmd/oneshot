@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  background: linear-gradient(to bottom, #2c003e, #000);
+  color: #f5e9f3;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: #fbbd2f;
+  text-shadow: 0 0 8px #fbbd2f;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #dab6e0;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.item-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 240, 200, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.03);
+}
+
+.item-card img {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto 1rem;
+  image-rendering: pixelated;
+}
+
+.item-card h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #fbe470;
+}
+
+.item-card p {
+  font-size: 1rem;
+  text-align: center;
+  color: #dfc;
+}
+
+.tag {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #aaa;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Custom context menu */
+.custom-menu {
+  position: absolute;
+  background-color: #333;
+  color: #f5e9f3;
+  border: 1px solid #444;
+  padding: 10px;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.custom-menu p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: #f5e9f3;
+}
+
+/* Hover effect for context menu */
+.custom-menu:hover {
+  background-color: #444;
+}
+

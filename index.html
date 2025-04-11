@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OneShot Item Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      transition: background-color 0.5s ease; /* Smooth background transition */
+    }
+    .footer-text {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.2em; /* Adjust font size of the footer text */
+    }
+    #niko-img, #lightbulb-img {
+      width: 60px; /* Size of images */
+      height: auto;
+      vertical-align: middle;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for transform and glow */
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Glow effect */
+    }
+    #niko-img:hover, #lightbulb-img:hover {
+      transform: scale(1.2) rotate(-10deg); /* Tilt and enlarge on hover */
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)); /* Stronger glow on hover */
+    }
+    .pitch-black-text {
+      font-size: 1.8em; /* Made the text bigger */
+      font-weight: bold; /* Made the text bold */
+      color: #fff; /* Ensure the text is readable on dark backgrounds */
+    }
+    /* Dark mode styling when lightbulb is clicked */
+    .dark-mode {
+      background-color: black; /* Set background to black */
+      color: transparent; /* Make text invisible */
+    }
+    .dark-mode #lightbulb-img {
+      filter: drop-shadow(0 0 10px rgba(255, 255, 0, 1)); /* Keep lightbulb glowing */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>oneshot item viewer</h1>
+    <p>view items, read descriptions, bask in the glow :3</p>
+  </header>
+
+  <main class="item-grid">
+    <!-- js will fill this hawkin -->
+  </main>
+
+  <footer>
+    <p>site by zoe ✨ based on OneShot (not official!)</p>
+    <p class="footer-text pitch-black-text">It's going pitch black. Not even the lightbulb can light it. <span id="google-user"></span></p>
+    <img id="niko-img" src="face/niko.png" alt="Niko" />
+    <img id="lightbulb-img" src="face/lightbulb.png" alt="Lightbulb" />
+  </footer>
+
+  <script>
+    // Get the image elements
+    const nikoImage = document.getElementById('niko-img');
+    const lightbulbImage = document.getElementById('lightbulb-img');
+    const body = document.body;
+
+    // List of images to cycle through for Niko
+    const images = ["face/niko_less_sad.png", "face/niko_pancakes.png", "face/niko_distressed.png"];
+    
+    // Counter to keep track of the current image for Niko
+    let currentImageIndex = 0;
+
+    // Function to change the image for Niko
+    nikoImage.addEventListener('click', function() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      nikoImage.src = images[currentImageIndex];
+    });
+
+    // Dark mode toggle function
+    lightbulbImage.addEventListener('click', function() {
+      body.classList.toggle('dark-mode'); // Toggle the dark mode class on body
+    });
+  </script>
+
+  <script src="items.js"></script>
+</body>
+</html>
+
